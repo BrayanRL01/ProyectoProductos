@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" href="/css/home.css" />
+        <link rel="stylesheet" href="/css/formularios.css" />
+        <title>Registro</title>
+    </head>
+
+    <body>
+        <header th:replace="plantilla/plantilla::barra-navegacion"></header>
+
+        <div class="container-formulario">
+            <h1 th:replace="plantilla/plantilla::titulo-formulario"></h1>
+            <div class="formulario">
+
+                <form th:object="${usuarios}" th:action="@{/saveTPersona}" method="POST">
+                    <input type = "hidden" th:field="*{id_tipo_persona}">
+                    <form class="">
+                        <input type="text" class="form-control rounded-3" id="floatingInput" th:field="*{nombre}" placeholder="Nombre del tipo de persona">
+                        <div class="botones">
+                            <!--button class="w-100 mb-2 btn btn-lg rounded-3 btn-success"type="submit" class="btn btn-success" value="Guardar">Submit</button-->
+                            <button class="btn-agregar" type="submit" th:text="${boton}"></button>
+                            <a href="javascript: history.go(-1)">
+                                <button type="button" class="btn-cancelar" name="btn-cancelar">Volver atrás</button>
+                            </a>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

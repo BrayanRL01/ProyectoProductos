@@ -1,0 +1,141 @@
+.container-formulario{
+    min-width: 90%;
+}
+
+.formulario{
+    display: flex;
+    flex-flow: row;
+}
+
+.container-tabla-productos{
+    min-width: fit-content;
+    margin-right: 220px;
+}
+
+.container-tabla-productos, .container-detalle{
+    text-align: center;
+}
+
+.container-detalle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-detalle table{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-formulario-encabezado{
+    text-align: left;
+    height: 15%;
+}
+
+table{
+    background-color: white;
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border: 0.5px solid #009a87;
+    font-size: 18px;
+    cursor: default;
+}
+
+th{
+    border-top: 2px solid #009a87;
+    border-bottom: 2px solid #009a87;
+    padding: 10px;
+    background-color: antiquewhite;
+}
+
+td{
+    border-bottom: 1px solid #009a87;
+    padding: 10px;
+}
+
+td a {
+    color: #009a87;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+td a {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+a:hover, a:focus {
+    background-size: 100% 2px;
+}
+
+tr:hover td{
+    background-color: #f68a53;
+    color: white;
+}
+
+tr:hover a{
+    color:white;
+}
+
+h2{
+    font-size: 30px;
+}
+
+.container-forms{
+    width: 550px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: center;
+/*    align-content: center;*/
+/*    justify-items: center;*/
+}
+
+.form-row{
+    display:flex;
+    flex-direction: column;
+    margin-top: 35px;
+}
+
+.form-row label{
+    font-size: 17px;
+}
+
+.container-forms input{
+    width: 240px;
+}
+
+.container-forms .desplegable{
+    width: 255px;
+}
+
+.btn-agregar{
+    width: 150px;
+    height: 45px;
+    color: white;
+    background-color: #009a87;
+    border-color: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .5s;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+.container-detalle .btn-agregar{
+    margin-top: 30px;
+}
+
+.btn-agregar:hover{
+    transition: background-color .4s;
+    background-color: #f68a53;
+    color: white;
+}
+
