@@ -1,6 +1,5 @@
 package com.aplicacion.negocio.service;
 
-import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -69,7 +68,7 @@ public class TipoPersonasService {
         jdbc.call.registerOutParameter(3, OracleTypes.VARCHAR);
 
         jdbc.call.execute();
-        
+
         msj.setNumero(jdbc.call.getInt(2));
         msj.setMensaje(jdbc.call.getString(3));
 
@@ -105,7 +104,7 @@ public class TipoPersonasService {
 
         return per;
     }
-    
+
     public Mensaje actualizarTPersona(Tipo_Personas tper) throws SQLException {
         jdbc.init();
 
@@ -118,10 +117,10 @@ public class TipoPersonasService {
         jdbc.call.registerOutParameter(4, OracleTypes.VARCHAR);
         // se ejecuta el query
         jdbc.call.execute();
-        
+
         msj.setNumero(jdbc.call.getInt(3));
         msj.setMensaje(jdbc.call.getString(4));
-        
+
         jdbc.call.close();
         jdbc.close();
         return msj;
@@ -139,13 +138,13 @@ public class TipoPersonasService {
 
         // se ejecuta el query
         jdbc.call.execute();
-        
+
         msj.setNumero(jdbc.call.getInt(2));
         msj.setMensaje(jdbc.call.getString(3));
 
         jdbc.call.close();
         jdbc.close();
-        
+
         return msj;
     }
 

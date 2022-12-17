@@ -4,7 +4,7 @@ body {
     margin: 0;
     display: flex;
     flex-flow: column;
-    background: linear-gradient(90deg, rgba(240,218,119,1) 0%, rgba(255,195,110,1) 100%);
+    background: linear-gradient(90deg, rgba(240, 218, 119, 1) 0%, rgba(255, 195, 110, 1) 100%);
     /*background: linear-gradient(90deg, rgba(141,144,240,1) 0%, rgba(101,106,252,1) 100%);
     de #f0da77 a #ffc36e
     naranja fuerte: #fcb045*/
@@ -52,9 +52,9 @@ nav {
     justify-content: center;
 }
 
-nav a{
+nav a {
     text-decoration: none;
-    color:#009a87;
+    color: #009a87;
 }
 
 nav .opciones li a:hover {
@@ -62,7 +62,7 @@ nav .opciones li a:hover {
     color: #f68a53;
 }
 
-.menu{
+.menu {
     display: flex;
     align-items: center;
 }
@@ -103,13 +103,13 @@ nav .opciones li:hover {
     color: #f68a53;
 }
 
-nav ul ul{
+nav ul ul {
     position: absolute;
     flex-flow: column wrap;
     width: 800px;
     height: 200px;
     background-color: white;
-    box-shadow: 24px 10px 15px -3px rgba(0,0,0,0.1);
+    box-shadow: 24px 10px 15px -3px rgba(0, 0, 0, 0.1);
     padding: 10px 0 10px 0;
     top: 57px;
     z-index: 1;
@@ -123,7 +123,7 @@ nav ul ul{
     opacity: 0;
 }
 
-nav .opciones li li{
+nav .opciones li li {
     display: flex;
     align-items: center;
     list-style: none;
@@ -136,32 +136,33 @@ nav .opciones li li{
     /* background-color: brown;*/
 }
 
-.opciones-sistema{
-    left:950px;
+.opciones-sistema {
+    left: 720px;
 }
 
-nav .opciones .opciones-sistema li{
+nav .opciones .opciones-sistema li {
     width: 200px;
 }
 
-.opciones-inventario{
+.opciones-inventario {
     left: 270px;
     flex-flow: column nowrap;
     width: 150px;
 }
 
-.opciones li:hover ul{
+.opciones li:hover ul {
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.2s;
 }
-.container2 img{
+
+.container2 img {
     top: 15%;
     right: 15%;
     position: absolute;
 }
 
-.texto{
+.texto {
     position: absolute;
     top: 18%;
     left: 8%;
@@ -174,11 +175,11 @@ nav .opciones .opciones-sistema li{
     margin-bottom: 0;
 }
 
-.texto p{
+.texto p {
     font-size: 30px;
 }
 
-.texto button{
+.texto button {
     width: 240px;
     height: 50px;
     color: white;
@@ -191,13 +192,13 @@ nav .opciones .opciones-sistema li{
     border-radius: 5px;
 }
 
-.texto button:hover{
+.texto button:hover {
     transition: background-color .4s;
     background-color: #f68a53;
     color: white;
 }
 
-.alert{
+.alert {
     font-size: 18px;
     background-color: #ccffcc;
     padding: 10px;
@@ -213,7 +214,7 @@ nav .opciones .opciones-sistema li{
     width: fit-content;
 }
 
-.alert-danger{
+.alert-danger {
     font-size: 18px;
     background-color: #ff9999;
     padding: 10px;

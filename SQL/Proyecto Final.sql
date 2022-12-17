@@ -586,7 +586,7 @@ CREATE OR REPLACE PROCEDURE SP_ELIMINAR_FACTURA (IN_ID_FACTURA IN NUMBER , RESUL
 BEGIN
 DELETE FROM TAB_FACTURAS WHERE IN_ID_FACTURA = ID_FACTURA;
 RESULTADO :=0;
-MENSAJE := 'La factura y sus respectivos detalles fueron eliminados satisfactoriamente';
+MENSAJE := 'La factura y sus respectivos detalles fueron eliminados satisfactoriamente.';
 END;
 /
 
@@ -599,7 +599,7 @@ VALUES (IN_NOMBRE);
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se pudo agregar el tipo de venta ya que existe otro con el mismo nombre en el sistema';
+MENSAJE := 'No se pudo agregar el tipo de venta ya que existe otro con el mismo nombre en el sistema.';
 END;
 /
 
@@ -630,7 +630,7 @@ WHERE ID_TIPO_VENTA = IN_ID_TIPO_VENTA;
 RESULTADO :=0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar el tipo de venta ya que el nuevo nombre esta siendo utilizado por otro en el sistema';
+    MENSAJE := 'No se pudo modificar el tipo de venta ya que el nuevo nombre esta siendo utilizado por otro en el sistema.';
     RESULTADO := 1;
 END;
 /
@@ -643,7 +643,7 @@ DELETE FROM TAB_TIPOS_VENTA WHERE ID_TIPO_VENTA = IN_ID_TIPO_VENTA;
 RESULTADO := 0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'El tipo de venta no fue eliminado ya que hay facturas bajo dicho tipo';
+    MENSAJE := 'El tipo de venta no fue eliminado ya que hay facturas bajo dicho tipo.';
     RESULTADO := 1;
 END;
 /
@@ -657,7 +657,7 @@ VALUES (IN_NOMBRE);
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se puede agregar un nombre ya en uso por otro medio de pago';
+MENSAJE := 'No se puede agregar un nombre ya en uso por otro medio de pago.';
 END;
 /
 
@@ -689,7 +689,7 @@ WHERE ID_MEDIO_PAGO = IN_ID_MEDIO_PAGO ;
 RESULTADO :=0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar el medio de pago ya que el nuevo nombre esta siendo utilizado por otro en el sistema';
+    MENSAJE := 'No se pudo modificar el medio de pago ya que el nuevo nombre está siendo utilizado por otro en el sistema.';
     RESULTADO := 1;
 END;
 /
@@ -701,7 +701,7 @@ DELETE FROM TAB_MEDIOS_PAGO WHERE ID_MEDIO_PAGO = IN_ID_MEDIO_PAGO;
 RESULTADO := 0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'El medio de pago no fue eliminado ya que hay facturas bajo dicho tipo de medio de pago';
+    MENSAJE := 'El medio de pago no fue eliminado ya que hay facturas bajo dicho tipo de medio de pago,';
     RESULTADO := 1;
 END;
 /
@@ -727,7 +727,7 @@ VALUES (IN_CEDULA, IN_NOMBRE, IN_PRIMER_APELLIDO, IN_SEGUNDO_APELLIDO, IN_DIRECC
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se pudo agregar la persona ya que la cedula ingresada ya se encuentra en el sistema';
+MENSAJE := 'No se pudo agregar la persona ya que la cédula ingresada ya se encuentra en el sistema.';
 END;
 
 END;
@@ -750,7 +750,7 @@ WHERE ID_PERSONA = IN_ID_PERSONA;
 RESULTADO :=0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar al persona ya que la nueva cedula esta siendo utilizado por otra en el sistema';
+    MENSAJE := 'No se pudo modificar al persona ya que la nueva cédula esta siendo utilizada por otra persona en el sistema.';
     RESULTADO := 1;
 END;
 / 
@@ -781,7 +781,7 @@ RESULTADO := 0;
 DELETE FROM TAB_PERSONAS WHERE IN_ID_PERSONA = ID_PERSONA;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'La persona no fue eliminada ya que cuenta con facturas asignadas a ella';
+    MENSAJE := 'La persona no fue eliminada ya que cuenta con facturas asignadas a ella.';
     RESULTADO := 1;
 END;
 /
@@ -795,7 +795,7 @@ VALUES (IN_NOMBRE);
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se pudo agregar la categoria ya que existe otra con el mismo nombre en el sistema';
+MENSAJE := 'No se pudo agregar la categoría ya que existe otra con el mismo nombre en el sistema.';
 END;
 /
 
@@ -826,7 +826,7 @@ WHERE ID_TIPO_PERSONA = IN_ID_TIPO_PERSONA;
 RESULTADO :=0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar el tipo de persona ya que el nuevo nombre esta siendo utilizado por otro en el sistema';
+    MENSAJE := 'No se pudo modificar el tipo de persona ya que el nuevo nombre esta siendo utilizado por otro en el sistema.';
     RESULTADO := 1;
 END;
 / 
@@ -838,7 +838,7 @@ DELETE FROM TAB_TIPOS_PERSONA WHERE IN_ID_TIPO_PERSONA = ID_TIPO_PERSONA;
 RESULTADO := 0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'El tipo de persona no fue eliminado ya que hay personas bajo dicho tipo';
+    MENSAJE := 'El tipo de persona no fue eliminado ya que hay personas bajo dicho tipo.';
     RESULTADO := 1;
 END;
 /
@@ -868,7 +868,7 @@ DELETE FROM TAB_USUARIOS WHERE IN_ID_USUARIO = ID_USUARIO;
 RESULTADO := 0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'El usuario no fue eliminado ya que se encuentra logueado';
+    MENSAJE := 'El usuario no fue eliminado ya que se encuentra iniciado sesión.';
     RESULTADO := 1;
 END;
 /
@@ -891,7 +891,7 @@ WHERE ID_USUARIO = IN_ID_USUARIO;
 RESULTADO :=0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar al usuario ya que el nuevo nombre de usuario o correo esta siendo utilizado por otro en el sistema';
+    MENSAJE := 'No se pudo modificar al usuario ya que el nuevo nombre de usuario o correo está siendo utilizado por otro en el sistema.';
     RESULTADO := 1;
 END;
 / 
@@ -906,7 +906,7 @@ VALUES (NOMBRE_USUARIO, NOMBRE, IN_PRIMER_APELLIDO, IN_SEGUNDO_APELLIDO, IN_EMAI
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se pudo agregar el usuario ya que el nombre de usuario ingresado ya se encuentra en uso en el sistema';
+MENSAJE := 'No se pudo agregar el usuario ya que el nombre de usuario ingresado ya se encuentra en uso en el sistema.';
 END;
 /
 
@@ -919,7 +919,7 @@ VALUES (IN_NOMBRE);
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se puede agregar un nombre ya en uso por otro estado';
+MENSAJE := 'No se puede agregar un nombre ya en uso por otro estado.';
 END;
 /
 
@@ -952,7 +952,7 @@ WHERE ID_ESTADO_USUARIO = IN_ID_ESTADO_USUARIO;
 RESULTADO :=0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar el estado de usuario ya que el nuevo nombre esta siendo utilizado por otro en el sistema';
+    MENSAJE := 'No se pudo modificar el estado de usuario ya que el nuevo nombre esta siendo utilizado por otro en el sistema.';
     RESULTADO := 1;
 END;
 / 
@@ -963,7 +963,7 @@ DELETE FROM TAB_ESTADOS_USUARIO WHERE IN_ID_ESTADO_USUARIO = ID_ESTADO_USUARIO;
 RESULTADO := 0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'Actualmente hay usuarios con dicho estado asignado. Asegurese de asignarles otro estado antes de intentar eliminar el estado';
+    MENSAJE := 'Actualmente hay usuarios con dicho estado asignado. Asegurese de asignarles otro estado antes de intentar eliminar el estado.';
     RESULTADO := 1;
 END;
 /
@@ -977,7 +977,7 @@ VALUES (IN_NOMBRE);
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se pudo agregar el tipo de role ya que existe otro con el mismo nombre en el sistema';
+MENSAJE := 'No se pudo agregar el tipo de rol ya que existe otro con el mismo nombre en el sistema.';
 END;
 /
 
@@ -1006,13 +1006,13 @@ END;
 CREATE OR REPLACE PROCEDURE SP_MODIFICAR_ROLE (IN_ID_ROLE IN NUMBER , IN_NOMBRE VARCHAR2, RESULTADO OUT NUMBER, MENSAJE OUT VARCHAR2) AS 
 BEGIN
 RESULTADO :=0;
-MENSAJE := 'El role fue modificado satisfactoriamente';
+MENSAJE := 'El role fue modificado satisfactoriamente.';
 UPDATE TAB_ROLES SET 
 NOMBRE = IN_NOMBRE 
 WHERE IN_ID_ROLE = ID_ROLE;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar el role ya que el nuevo nombre esta siendo utilizado por otro en el sitema';
+    MENSAJE := 'No se pudo modificar el rol ya que el nuevo nombre esta siendo utilizado por otro en el sistema.';
     RESULTADO := 1;
 END;
 /
@@ -1022,10 +1022,10 @@ CREATE OR REPLACE PROCEDURE SP_ELIMINAR_ROLE (IN_ID_ROLE IN NUMBER , RESULTADO O
 BEGIN
 DELETE FROM TAB_ROLES WHERE IN_ID_ROLE = ID_ROLE;
 RESULTADO :=0;
-MENSAJE := 'El role fue eliminado satisfactoriamente';
+MENSAJE := 'El rol fue eliminado satisfactoriamente.';
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'Actualmente hay usuarios con dicho role en el sistema. Asegurese de eliminarlos o asignarlos a otro role antes de intentar eliminar el role.';
+    MENSAJE := 'Actualmente hay usuarios con dicho role en el sistema. Asegurese de eliminarlos o asignarlos a otro role antes de intentar eliminar el rol.';
     RESULTADO := 1;
 END;
 /
@@ -1063,7 +1063,7 @@ RESULTADO :=0;
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se pudo agregar el producto ya que existe otro con el mismo nombre en el sistema';
+MENSAJE := 'No se pudo agregar el producto ya que existe otro con el mismo nombre en el sistema.';
 END;
 /
 
@@ -1085,7 +1085,7 @@ WHERE ID_PRODUCTO = IN_ID_PRODUCTO;
 RESULTADO := 0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar el producto ya que el nuevo nombre esta siendo utilizado por otro en el sistema';
+    MENSAJE := 'No se pudo modificar el producto ya que el nuevo nombre esta siendo utilizado por otro en el sistema.';
     RESULTADO := 1;
 END;
 /
@@ -1107,7 +1107,7 @@ VALUES (IN_NOMBRE);
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se pudo agregar la marca ya que existe otra con el mismo nombre en el sistema';
+MENSAJE := 'No se pudo agregar la marca ya que existe otra con el mismo nombre en el sistema.';
 END;
 /
 
@@ -1139,7 +1139,7 @@ WHERE ID_MARCA = IN_ID_MARCA;
 RESULTADO :=0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar la marca ya que el nuevo nombre esta siendo utilizado por otra en el sistema';
+    MENSAJE := 'No se pudo modificar la marca ya que el nuevo nombre esta siendo utilizado por otra en el sistema.';
     RESULTADO := 1;
 END;
 /
@@ -1149,7 +1149,7 @@ CREATE OR REPLACE PROCEDURE SP_ELIMINAR_MARCA (IN_ID_MARCA IN NUMBER , RESULTADO
 BEGIN
 DELETE FROM TAB_MARCAS WHERE IN_ID_MARCA = ID_MARCA;
 RESULTADO :=0;
-MENSAJE := 'La marca fue eliminada satisfactoriamente';
+MENSAJE := 'La marca fue eliminada satisfactoriamente.';
 EXCEPTION
 WHEN OTHERS THEN
     MENSAJE := 'Actualmente hay productos de dicha marca en el sistema. Asegurese de eliminarlos o asignarlos a otra marca antes de intentar eliminar la marca.';
@@ -1177,7 +1177,7 @@ INSERT INTO TAB_CATEGORIAS(NOMBRE,CATEGORIA_MADRE_ID) VALUES (IN_NOMBRE,IN_CATEG
 EXCEPTION
 WHEN dup_val_on_index THEN
 RESULTADO:= 1;
-MENSAJE := 'No se pudo agregar la categoria ya que existe otra con el mismo nombre en el sitema';
+MENSAJE := 'No se pudo agregar la subcategoría ya que existe otra con el mismo nombre en el sistema.';
 END;
 /
 
@@ -1214,7 +1214,7 @@ WHERE ID_CATEGORIA = IN_ID_CATEGORIA;
 RESULTADO :=0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar la marca ya que el nuevo nombre esta siendo utilizado por otra en el sistema';
+    MENSAJE := 'No se pudo modificar la marca ya que el nuevo nombre esta siendo utilizado por otra en el sistema.';
     RESULTADO := 1;
 END;
 /
@@ -1230,7 +1230,7 @@ WHERE ID_CATEGORIA = IN_ID_CATEGORIA;
 RESULTADO := 0;
 EXCEPTION
 WHEN OTHERS THEN
-    MENSAJE := 'No se pudo modificar la categoria ya que el nuevo nombre esta siendo utilizado por otra en el sistema';
+    MENSAJE := 'No se pudo modificar la categoría o subcategoría ya que el nuevo nombre esta siendo utilizado por otra en el sistema.';
     RESULTADO := 1;
 END;
 /
@@ -1245,10 +1245,10 @@ EXCEPTION
 WHEN OTHERS THEN
     SELECT CATEGORIA_MADRE_ID INTO V_CATEGORIA_MADRE_CHECK FROM TAB_CATEGORIAS WHERE IN_ID_CATEGORIA = ID_CATEGORIA; 
     IF V_CATEGORIA_MADRE_CHECK IS NULL THEN 
-    MENSAJE := 'La categoria no fue eliminada ya que hay subcategorias que dependen de ella';
+    MENSAJE := 'La categoría no fue eliminada ya que hay subcategorias que dependen de ella.';
     RESULTADO := 1;
     ELSE
-    MENSAJE := 'La categoria no fue eliminada ya que hay productos que dependen de ella';
+    MENSAJE := 'La categoría no fue eliminada ya que hay productos que dependen de ella.';
     RESULTADO := 1;
     END IF;
 END;
@@ -1290,7 +1290,7 @@ INSERT INTO TAB_DETALLES_FACTURA (ID_FACTURA, ID_DETALLE, PRODUCTO, TAMANO, CANT
 INSERT INTO TAB_DETALLES_FACTURA (ID_FACTURA, ID_DETALLE, PRODUCTO, TAMANO, CANTIDAD, PRECIO, IVA) VALUES (3,1,'Chaqueta impermeable','L',1,41900,0.13);
 INSERT INTO TAB_DETALLES_FACTURA (ID_FACTURA, ID_DETALLE, PRODUCTO, TAMANO, CANTIDAD, PRECIO, IVA) VALUES (3,2,'Camisa manga larga','M',1,25500,0.13);
 INSERT INTO TAB_DETALLES_FACTURA (ID_FACTURA, ID_DETALLE, PRODUCTO, TAMANO, CANTIDAD, PRECIO, IVA) VALUES (3,3,'Tommy Hilfiger','29',1,12000,0.13);
-/
+
 -------------------------------------------------------------------------------------------------------------------
 --GRANT EXECUTE ON NEGOCIO TO WEB_ACCESS;
 begin
